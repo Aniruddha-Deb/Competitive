@@ -1,0 +1,9 @@
+2
+Barcelona 2
+Malaga 1
+RealMadrid 1
+Eibar 0
+Malaga 3
+RealMadrid 2
+Barcelona 8
+Eibar 6
