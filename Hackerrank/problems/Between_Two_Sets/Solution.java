@@ -55,3 +55,4 @@ public class Solution {
         int total = getTotalX(a, b);
         System.out.println(total);
     }
+}
