@@ -4,7 +4,7 @@ name="$1"
 
 comp=()
 out=()
-cd /Users/Sensei/Projects/Competitive/Codechef/problems/$name
+cd "/Users/Sensei/Projects/[Educational]/Competitive/Codechef/problems/$name"
 
 javac $name".java"
 java $name <in.txt> out.txt
