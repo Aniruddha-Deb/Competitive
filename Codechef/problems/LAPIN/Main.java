@@ -124,7 +124,29 @@ class Main {
         int numTestCases = ir.readInt();
         
         while( numTestCases > 0 ) {
-            // write code here
+            String s = ir.readString().toUpperCase();
+            String s1 = s.substring( 0, s.length()/2 );
+            int s2startIndex = s.length()%2 == 0 ? s.length()/2 : s.length()/2+1;
+            String s2 = s.substring( s2startIndex, s.length() );
+
+            if( s1.length() != s2.length() ) {
+                ow.println( "NO" );
+                continue;
+            }
+
+            int[] cFreqs1 = new int[26];
+            int[] cFreqs2 = new int[26];
+            for( int i=0; i<s1.length(); i++ ) {
+                cFreqs1[s1.charAt(i)-65]++;
+                cFreqs2[s2.charAt(i)-65]++;
+            }
+
+            if( !Arrays.equals( cFreqs1, cFreqs2 ) ) {
+                ow.println( "NO" );
+            }
+            else {
+                ow.println( "YES" );
+            }
 
             numTestCases--;
         }

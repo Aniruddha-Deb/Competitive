@@ -124,7 +124,23 @@ class Main {
         int numTestCases = ir.readInt();
         
         while( numTestCases > 0 ) {
-            // write code here
+            int g = ir.readInt();
+            while( g > 0 ) {
+
+                int i = ir.readInt();
+                int n = ir.readInt();
+                int q = ir.readInt();
+
+                int n1 = n/2;
+                int n2 = n-n1;
+
+                int nh = i==1 ? n2 : n1;
+                int nt = i==1 ? n1 : n2;
+
+                int qo = q==1 ? nt : nh;
+                ow.println( qo );
+                g--;
+            }
 
             numTestCases--;
         }

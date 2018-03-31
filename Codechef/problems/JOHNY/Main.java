@@ -124,7 +124,14 @@ class Main {
         int numTestCases = ir.readInt();
         
         while( numTestCases > 0 ) {
-            // write code here
+            int n = ir.readInt();
+            int[] songs = ir.readIntArray( n );
+            int k = ir.readInt();
+            int kVal = songs[k-1];
+
+            Arrays.sort( songs );
+            int loc = Arrays.binarySearch( songs, kVal )+1;
+            ow.println( loc );
 
             numTestCases--;
         }

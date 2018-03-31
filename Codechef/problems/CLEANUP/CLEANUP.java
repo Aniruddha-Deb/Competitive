@@ -3,9 +3,8 @@ import java.util.*;
 
 import static java.lang.Math.*;
 
-class Main {
+class CLEANUP {
 
-    // FastIO
     class InputReader {
          
         private InputStream stream;
@@ -118,13 +117,28 @@ class Main {
     }     
 
     public static void main( String args[] ) throws IOException {
-        InputReader ir = new Main().new InputReader( System.in );
-        OutputWriter ow = new Main().new OutputWriter( System.out );
+        InputReader ir = new CLEANUP().new InputReader( System.in );
+        OutputWriter ow = new CLEANUP().new OutputWriter( System.out );
 
         int numTestCases = ir.readInt();
         
         while( numTestCases > 0 ) {
-            // write code here
+            
+            int n = ir.readInt();
+            int m = ir.readInt();
+            int[] doneJobs = ir.readIntArray( m );
+            String chef = "";
+            String assistant = "";
+            for( int i=1; i<=n; i++ ) {
+                final int ci = i;
+                if( !Arrays.stream( doneJobs ).anyMatch( x -> x==ci ) ) {
+                    if( chef.length() > assistant.length() ) 
+                        assistant += i + " ";
+                    else chef += i + " ";
+                }
+            }
+            ow.println( chef );
+            ow.println( assistant );
 
             numTestCases--;
         }
