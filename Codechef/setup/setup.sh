@@ -2,7 +2,6 @@
 
 name="$1"
 
-cd /Users/Sensei/Projects/[Educational]/Competitive/Codechef/foolyou
 mkdir $name
 cd $name
 
