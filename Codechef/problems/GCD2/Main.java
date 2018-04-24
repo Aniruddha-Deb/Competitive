@@ -116,20 +116,30 @@ class Main {
             writer.flush();
         }
      
-    }
+    }     
 
-    void run() throws Exception {
+    public static void main( String args[] ) throws IOException {
         InputReader ir = new Main().new InputReader( System.in );
         OutputWriter ow = new Main().new OutputWriter( System.out );
 
         int numTestCases = ir.readInt();
         
         while( numTestCases > 0 ) {
-            // write code here
+            BigInteger ni = new BigInteger( ir.readString() );
+            BigInteger bi = new BigInteger( ir.readString() );
+
+            ow.println( gcd( ni, bi ) ); 
 
             numTestCases--;
         }
-    }     
+    }
 
-    public static void main( String args[] ) throws Exception { new Main().run(); }
+    static BigInteger gcd( BigInteger a, BigInteger b ) {
+        if( b.compareTo( BigInteger.ZERO ) == 0 ) {
+            return a;
+        }
+        else {
+            return gcd( b, a.mod( b ) );
+        }
+    }
 }

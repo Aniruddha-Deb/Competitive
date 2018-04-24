@@ -5,4 +5,6 @@ name="$1"
 mkdir $name
 cd $name
 
-cp "../../setup/config.java" "Main.java"
+cp "/Users/Sensei/Projects/[Educational]/Competititive/Codechef/setup/config.java" "Main.java"
+touch "in.txt"
+cat > "in.txt"

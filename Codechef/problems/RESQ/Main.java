@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-import java.math.*;
 
 import static java.lang.Math.*;
 
@@ -116,20 +115,30 @@ class Main {
             writer.flush();
         }
      
-    }
+    }     
 
-    void run() throws Exception {
+    public static void main( String args[] ) throws IOException {
         InputReader ir = new Main().new InputReader( System.in );
         OutputWriter ow = new Main().new OutputWriter( System.out );
 
         int numTestCases = ir.readInt();
         
         while( numTestCases > 0 ) {
-            // write code here
+            int n = ir.readInt();
+
+            double sqrt = sqrt(n);
+            if( sqrt%1d == 0d ) ow.println( "0" );
+            else {
+                int val = (int)round(sqrt);
+                for( int i=val; i>0; i-- ) {
+                    if( n%i == 0 ) {
+                        ow.println( ((n/i)-i) );
+                        break;
+                    }
+                }
+            }
 
             numTestCases--;
         }
-    }     
-
-    public static void main( String args[] ) throws Exception { new Main().run(); }
+    }
 }

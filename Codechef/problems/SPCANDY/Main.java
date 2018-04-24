@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-import java.math.*;
 
 import static java.lang.Math.*;
 
@@ -125,7 +124,11 @@ class Main {
         int numTestCases = ir.readInt();
         
         while( numTestCases > 0 ) {
-            // write code here
+            long n = Long.parseLong( ir.readString() );
+            long k = Long.parseLong( ir.readString() );
+
+            if( k == 0 ) ow.println( "0 " + n );
+            else ow.println( n/k + " " + n%k );
 
             numTestCases--;
         }
