@@ -4,7 +4,9 @@ import java.math.*;
 
 import static java.lang.Math.*;
 
-class Main {
+class Solution {
+
+    public static final int MOD = 1000000007;
 
     // FastIO
     class InputReader {
@@ -119,17 +121,15 @@ class Main {
     }
 
     void run() throws Exception {
-        InputReader ir = new Main().new InputReader( System.in );
-        OutputWriter ow = new Main().new OutputWriter( System.out );
+        InputReader ir = new InputReader( System.in );
+        OutputWriter ow = new OutputWriter( System.out );
 
-        int numTestCases = ir.readInt();
+        int ntc = ir.readInt();
         
-        while( numTestCases > 0 ) {
+        while( ntc-- > 0 ) {
             // write code here
-
-            numTestCases--;
         }
     }     
 
-    public static void main( String args[] ) throws Exception { new Main().run(); }
+    public static void main( String args[] ) throws Exception { new Solution().run(); }
 }
