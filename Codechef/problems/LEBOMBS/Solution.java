@@ -130,18 +130,13 @@ class Solution {
             int n = ir.readInt();
             char[] c = ir.readString().toCharArray();
 
-            for( int i=0; i<n; i++ ) {
-                if( c[i] == '1' ) {
-                    if( i != 0 ) c[i-1] = '2';
-                    if( i != n-1 ) c[i+1] = '2';
-                }
-            }
-
             int ctr = 0;
 
             for( int i=0; i<n; i++ ) {
-                if( c[i] == '0' ) ctr++;
+                if( c[i] == '1' || (i>0&&c[i-1]=='1') || (i<n-1&&c[i+1]=='1') ) continue;
+                ctr++;
             }
+
             ow.println( ctr );
         }
     }     
