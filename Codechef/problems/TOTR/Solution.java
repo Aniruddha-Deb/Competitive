@@ -125,21 +125,27 @@ class Solution {
         OutputWriter ow = new OutputWriter( System.out );
 
         int ntc = ir.readInt();
-        
-        while( ntc-- > 0 ) {
-            int n = ir.readInt();
-            char[][] x = new char[n][n];
-            for( int i=0; i<n; i++ ) {
-                x[i] = ir.readString().toCharArray();
-            }
+        char[] permut = ir.readString().toCharArray();
 
-            // TODO
-            int ncm = 0;
-            for( int x=0; x<n; x++ ) {
-                for( int y=n-1; y>=0; y-- ) {
-                    if(  )
+        while( ntc-- > 0 ) {
+            String sentence = ir.readString();
+            for( char c : sentence.toCharArray() ) {
+                if( Character.isUpperCase( c ) ) {
+                    c = (char)(permut[(c+('a'-'A'))-'a'] - ('a'-'A'));
+                    ow.print( c );
                 }
-            }
+                else if( Character.isLowerCase( c ) ) {
+                    c = permut[c-'a'];
+                    ow.print( c );
+                }
+                else if( c == '_' ) {
+                    ow.print( ' ' );
+                }
+                else {
+                    ow.print( c );
+                }
+            }    
+            ow.println();
         }
     }     
 
